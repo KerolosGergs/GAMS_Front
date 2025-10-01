@@ -1,0 +1,14 @@
+<!-- NOTE: The .text-primary class is themed to #005f66 via styles.scss -->
+<div class="row g-4 animate__animated animate__fadeIn">
+
+  <div class="col-md-6 col-lg-4" *ngFor="let med of medications">
+    <div class="card h-100 shadow-sm">
+      <img [src]="med.img" class="card-img-top p-4" style="height: 140px; object-fit: contain;" [alt]="med.name">
+      <div class="card-body">
+        <h5 class="card-title text-primary"><i class="bi bi-capsule me-2"></i>{{med.name}}</h5>
+        <p class="card-text mb-1">Dosage: <b>{{med.dosage}}</b></p>
+        <p class="card-text mb-0">Times: <span *ngFor="let t of med.times; let last = last">{{t}}{{!last ? ', ' : ''}}</span></p>
+      </div>
+    </div>
+  </div>
+</div>

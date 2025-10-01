@@ -1,0 +1,31 @@
+<div class="dashboard d-flex vh-100 animate__animated animate__fadeIn">
+  <nav class="sidebar  text-white d-flex flex-column p-4">
+    <h3 class="mb-4 text-center fw-bold animate__animated animate__fadeInDown">Patient Dashboard</h3>
+    <ul class="nav flex-column nav-pills">
+      @for (item of navItems; track item.key) {
+        <li class="nav-item mb-2">
+          <button class="nav-link d-flex align-items-center text-white w-100" [ngClass]="{active: selected === item.key}"
+                  (click)="select(item.key)">
+            <i class="bi me-2" [ngClass]="item.icon"></i> {{item.label}}
+          </button>
+        </li>
+      }
+    </ul>
+  </nav>
+  <main class="flex-grow-1 p-4 bg-light overflow-auto">
+    <div class="h-100">
+      @if (selected === 'profile') {
+        <app-patient-profile></app-patient-profile>
+      }
+      @if (selected === 'medical-repo') {
+       <app-patient-medical-repo></app-patient-medical-repo>
+      }
+      @if (selected === 'medication') {
+       <app-patient-medication></app-patient-medication>
+      }
+      @if (selected === 'medical-tests') {
+        <app-patient-medical-tests></app-patient-medical-tests>
+      }
+    </div>
+  </main>
+</div>

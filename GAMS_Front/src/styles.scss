@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+// Main color theme for the project
+:root {
+	--main-color: #005f66;
+	--bs-primary: #005f66;
+}
+
+$primary: #005f66;
+
+// Optionally override Bootstrap primary color
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+$theme-colors: map-merge($theme-colors, ("primary": $primary));
+@import 'bootstrap/scss/bootstrap';
