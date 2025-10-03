@@ -1,0 +1,29 @@
+<section class="tests-section responsive-container animate__animated animate__fadeIn">
+  <div class="py-5">
+    <h2 class="text-primary fw-bold mb-4 animate__animated animate__fadeInDown">Patient Medical Tests</h2>
+    <div class="table-responsive">
+      <table class="table table-hover align-middle bg-white rounded shadow-sm">
+        <thead class="table-light">
+          <tr>
+            <th>Test Name</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (test of tests; track $index) {
+
+            <tr >
+              <td><i class="bi bi-file-earmark-medical text-primary me-2"></i>{{test.name}}</td>
+              <td><i class="bi bi-calendar-event me-1"></i>{{test.date}}</td>
+              <td>
+                <a [href]="test.pdf" download class="btn btn-outline-primary btn-sm me-2 animate__animated animate__fadeIn"><i class="bi bi-download"></i></a>
+                <a [href]="test.pdf" target="_blank" class="btn btn-outline-secondary btn-sm animate__animated animate__fadeIn"><i class="bi bi-eye"></i></a>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

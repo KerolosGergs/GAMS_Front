@@ -1,0 +1,20 @@
+.hero-section {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #e0f7fa 0%, #f8fafc 100%);
+  border-radius: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 32px rgba(0,95,102,0.08);
+  .card {
+    border-radius: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    &:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(0,95,102,0.16);
+    }
+  }
+}

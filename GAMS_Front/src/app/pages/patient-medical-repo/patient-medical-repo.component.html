@@ -1,0 +1,21 @@
+<section class="repo-section responsive-container animate__animated animate__fadeIn">
+  <div class="py-5">
+    <h2 class="text-primary fw-bold mb-4 animate__animated animate__fadeInDown">Patient Medical Repository</h2>
+    <div class="row g-4">
+      @for (report of reports; track $index) {
+
+        <div class="col-md-6 col-lg-4" >
+          <div class="card shadow-lg h-100 animate__animated animate__fadeInUp">
+            <div class="card-body">
+              <i class="bi bi-file-earmark-pdf display-5 text-danger mb-2"></i>
+              <h5 class="card-title">{{report.title}}</h5>
+              <p class="card-text text-muted">{{report.date}}</p>
+              <a [href]="report.file" download class="btn btn-outline-primary btn-sm me-2 animate__animated animate__fadeIn"><i class="bi bi-download"></i> Download</a>
+              <a [href]="report.file" target="_blank" class="btn btn-outline-secondary btn-sm animate__animated animate__fadeIn"><i class="bi bi-eye"></i> View</a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

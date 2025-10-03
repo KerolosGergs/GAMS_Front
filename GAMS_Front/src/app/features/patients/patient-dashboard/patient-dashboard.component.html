@@ -1,6 +1,6 @@
-<div class="dashboard d-flex vh-100 animate__animated animate__fadeIn">
-  <nav class="sidebar  text-white d-flex flex-column p-4">
-    <h3 class="mb-4 text-center fw-bold animate__animated animate__fadeInDown">Patient Dashboard</h3>
+<div class="dashboard d-flex vh-100 animate-fade-in responsive-container">
+  <nav class="sidebar text-white d-flex flex-column p-4 animate-slide-in-left">
+  <h3 class="mb-4 text-center fw-bold animate-fade-in-down">Patient Dashboard</h3>
     <ul class="nav flex-column nav-pills">
       @for (item of navItems; track item.key) {
         <li class="nav-item mb-2">
@@ -12,7 +12,7 @@
       }
     </ul>
   </nav>
-  <main class="flex-grow-1 p-4 bg-light overflow-auto">
+  <main class="flex-grow-1 p-4 bg-light overflow-auto animate-scale-in">
     <div class="h-100">
       @if (selected === 'profile') {
         <app-patient-profile></app-patient-profile>

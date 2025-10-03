@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 export class LoginComponent {
   loginForm: FormGroup;
   hide = true;
-
+  router= inject(Router); 
   constructor(private fb: FormBuilder) {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required]],
@@ -27,7 +28,9 @@ export class LoginComponent {
   }
 
   onSubmit() {
+    this.router.navigate(['/home']);
     if (this.loginForm.valid) {
+      
       // TODO: Implement login logic
       console.log(this.loginForm.value);
     }
